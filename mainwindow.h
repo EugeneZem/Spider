@@ -23,5 +23,13 @@ private:
 
     Signals *sig1;
     Signals *sig2;
+
+public slots:
+    void ReceiveSignal();
+
+
+
+private slots:
+    void on_pushButton_clicked();
 };
 #endif // MAINWINDOW_H

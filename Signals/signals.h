@@ -13,11 +13,12 @@ public:
 
     ~Signals();
 
+    void SendSignal();
+
 public slots:
 
 signals:
-
-    void sig_Signal(QString rcv);
+    void sig_Signal();
 
 
 };

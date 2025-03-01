@@ -9,3 +9,9 @@ Signals::~Signals()
 {
     qDebug() << "Destroy sygnal";
 }
+
+void Signals::SendSignal()
+{
+    emit sig_Signal();
+    qDebug() << "Signal Emitted";
+}

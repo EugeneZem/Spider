@@ -8,14 +8,28 @@ MainWindow::MainWindow(QWidget *parent)
     ui->setupUi(this);
 
     sig1 = new Signals(this);
-    sig2 = new Signals(sig1);
+
+    connect(sig1, &Signals::sig_Signal, this, &MainWindow::ReceiveSignal);
+
 }
 
 MainWindow::~MainWindow()
 {
     delete ui;
+}
 
-    delete sig1;
-    delete sig2;
+void MainWindow::ReceiveSignal()
+{
+    QString HTMLText = "Сигнал получен!";
+
+    ui->textBrowser->setHtml(HTMLText);
+
+    qDebug() << "Signal receive";
+}
+
+
+void MainWindow::on_pushButton_clicked()
+{
+    sig1->SendSignal();
 }
 

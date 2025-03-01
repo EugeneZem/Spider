@@ -2,7 +2,7 @@
 #define SPIDERDB_H
 
 #include<string>
-#include <pqxx/pqxx>
+//#include <pqxx/pqxx>
 
 class SpiderDB
 {

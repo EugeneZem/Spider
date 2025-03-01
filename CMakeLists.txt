@@ -16,16 +16,17 @@ if(Boost_FOUND)
     include_directories(${Boost_INCLUDE_DIR})
 endif()
 
-add_subdirectory("D:\\Projects\\libpqxx-7.10.0" libpqxx-build)
+#add_subdirectory("D:\\Projects\\libpqxx-7.10.0" libpqxx-build)
 
 set(PROJECT_SOURCES
         main.cpp
         mainwindow.cpp mainwindow.h mainwindow.ui
 
-        Libpqxx-build
+ #       Libpqxx-build
 
-        Signals/signals.h   Signals/signals.cpp
-        SpiderDB/spiderdb.h SpiderDB/spiderdb.cpp
+        Signals/signals.h       Signals/signals.cpp
+        SpiderDB/spiderdb.h     SpiderDB/spiderdb.cpp
+        HTTPClient/httpclient.h HTTPClient/httpclient.cpp
     )
 
 qt_add_executable(Spider
@@ -33,4 +34,5 @@ qt_add_executable(Spider
         ${PROJECT_SOURCES}
     )
 
-target_link_libraries(Spider PRIVATE Qt${QT_VERSION_MAJOR}::Widgets pqxx)
+#target_link_libraries(Spider PRIVATE Qt${QT_VERSION_MAJOR}::Widgets pqxx)
+target_link_libraries(Spider PRIVATE Qt${QT_VERSION_MAJOR}::Widgets)
